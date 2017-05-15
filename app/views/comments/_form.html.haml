@@ -1,0 +1,14 @@
+%h3= "Post a comment"
+
+= form_for [ @article, @comment ] do |f|
+  %ul
+    - @comment.errors.full_messages.each do |error|
+      %li
+        = error
+  %p
+    = f.label :author_name, "Your Name"
+    = f.text_field :author_name
+  %p
+    = f.label :body, "Your Comment"
+    = f.text_area :body
+  %p= f.submit

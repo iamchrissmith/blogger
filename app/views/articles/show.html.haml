@@ -2,6 +2,7 @@
   = @article.title
 %p
   = @article.body
+= render :partial => "comments/form"
 %p
   = link_to "<< Back to list of articles", articles_path
 %p
@@ -9,5 +10,5 @@
 %p
   = link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"}
 %h3
-  = "Comments"
+  = "Comments (#{@article.comments.size})"
 = render :partial => "comment", collection: @article.comments.reverse
