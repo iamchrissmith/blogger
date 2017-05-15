@@ -1,5 +1,8 @@
 %h1
   = @article.title
+- if @article.image.exists?
+  %p
+    = image_tag @article.image.url
 %p
   = @article.body
 %p

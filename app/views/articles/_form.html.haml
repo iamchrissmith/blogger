@@ -13,4 +13,10 @@
   %p
     = f.label :tag_list
     = f.text_field :tag_list
+  %p
+    - if @article.image.exists?
+      = image_tag @article.image.url
+  %p
+    = f.label :image, "Attach an Image"
+    = f.file_field :image
   %p= f.submit
