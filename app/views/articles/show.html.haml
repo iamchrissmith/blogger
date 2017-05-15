@@ -2,6 +2,11 @@
   = @article.title
 %p
   = @article.body
+%p
+  = "Tags: "
+  - @article.tags.each do |tag|
+    = link_to tag.name, tag_path(tag)
+
 = render :partial => "comments/form"
 %p
   = link_to "<< Back to list of articles", articles_path
