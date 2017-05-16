@@ -10,7 +10,7 @@
   - @article.tags.each do |tag|
     = link_to tag.name, tag_path(tag)
 
-= render :partial => "comments/form"
+= render :partial => "corments/form"
 %p
   = link_to "<< Back to list of articles", articles_path
 %p
